@@ -11,6 +11,10 @@ app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
 
+app.get("/", (req, res) => {
+  res.json("hello");
+})
+
 app.post('/signup', async(req, res) => {
     const user = new BeetingUsers({
        username:JSON.parse(req.body.body).username,
